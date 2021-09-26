@@ -132,7 +132,7 @@ new_loan = {
 #    The function should return the `present_value` for the loan.
 # YOUR CODE HERE!
 
-def present_value(future_value, remaining_months, annual_discount_rate):
+def calculate_present_value(future_value, remaining_months, annual_discount_rate):
     present_value = future_value / (1 + annual_discount_rate/12)**remaining_months
     return present_value
 
@@ -144,7 +144,7 @@ future_value = new_loan.get("future_value")
 remaining_months = new_loan.get("remaining_months")
 annual_discount_rate = 0.2
 
-present_value = present_value(future_value, remaining_months, annual_discount_rate)
+present_value = calculate_present_value(future_value, remaining_months, annual_discount_rate)
 
 print(f"The present value of the loan is: {present_value:.2f}")
 
@@ -242,6 +242,6 @@ with open(csvpath, 'w', newline='') as csvfile:
 
     # Write the values of each dictionary inside of CSV file
     # as a row in the CSV file.
-    
+
     for row in inexpensive_loans:
         csvwriter.writerow(row.values())
